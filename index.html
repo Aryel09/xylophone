@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+          box-sizing: border-box;
+      }
+
+    html, body {
+
+      padding: 0;
+      margin: 0;
+     }
+       /* .frw {
+            display: flex;
+            background-color: aqua;
+            gap: 20px;
+            justify-content: space-around;
+            padding: 20px;
+            align-items: center;
+            margin-top: 40px;
+           
+        } */
+
+      .frw {
+     padding: 10px 10px;
+     background-color: blue;
+     display: flex;
+     flex-direction: row;
+     gap: 10px;
+     justify-content: center;
+       max-width: 100%;
+     
+      
+
+   }
+
+        .pbt {
+            background-color: transparent;
+            border: 1px solid yellow;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            user-select: none;
+           
+        
+        }
+
+        .pbt:hover {
+            transform: scaleX(1.2);
+            border-color: #fff00;
+            box-shadow: 0 0 10px yellow;
+        }
+
+        .container {
+            /*default*/
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-right: auto;
+            margin-left: auto;
+
+           /*self-generate*/
+            background-color: darkblue;
+            color: white;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            height: 100vh;
+
+
+        }
+
+        .cpb {
+            height: 80%;
+            background-color: blueviolet;
+            margin: 0 auto;
+             display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+
+
+        h3 {
+            text-align: center;
+        }
+
+/*
+  @media (min-width: 700px) and (max-width:800px) and (min-height: 200px) and (max-height: 300px) {
+ 
+   .container {
+
+    max-width: 100%;
+   }
+       
+   }*/
+
+       @media (max-width: 420px) {
+         .container {
+      /*max-width: 300px;*/
+     max-width: 100%;
+   }
+    .cpb {
+             /* max-width: 320px;  */
+
+             max-width: 100%;
+       }
+      }
+      
+  
+        /* Extra small screen */
+
+     @media (min-width: 421px) and (max-width: 576px) {
+            .container {
+               /* max-width: 420px; */
+                max-width: 100%;
+            }
+        }
+
+
+/* before
+        @media(max-width: 576px) {
+            .container {
+                max-width: 100%;
+            }
+        }
+
+  */
+
+        /* small */
+        @media (min-width: 557px) and (max-width: 768px) {
+            .container {
+              /*  max-width: 540px;*/
+               max-width: 100%;
+            }
+          .frw {
+
+           flex-basis: 80%;
+       }
+       .pbt {
+          padding: 14px 28px
+
+      }
+        
+
+        }
+
+        /* medium */
+        @media (min-width: 769px) and (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        /* large */
+
+        @media (min-width: 993px) and (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        /* extra large */
+        @media (min-width: 1201px) and (max-width: 1400px) {
+            .container {
+                max-width: 1400px;
+            }
+        }
+
+        /* extra large large */
+        @media (min-width: 1401px){
+            .container {
+                max-width: 1320px;
+            }
+        }
+       footer {
+      padding: 10px;
+      text-align: center;
+     background-color: black;
+     color: white;
+
+     }
+  
+   .vb {
+     padding: 6px 9px;
+     border-radius: 5px;
+background-color: light-gray;
+ color: red;
+ float: right;
+ border: none;
+     
+   }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+ <button type="button" class="vb" id="exb">Exit</button>
+
+        <h3>Xylophone</h3>
+
+        <div class="cpb">
+
+        <div class="frw">
+            
+            <div class="pbt">
+               <span id="Ba">
+                <kbd>A</kbd>
+            </span>
+        </div>
+        <div class="pbt">
+             <span id="Bb">
+            <kbd>B</kbd>
+            </span>
+        </div>
+        <div class="pbt">
+            <span id="Bc">
+            <kbd>C</kbd>
+            </span>
+        </div>
+        <div class="pbt">
+            <span id="Bd">
+            <kbd>D</kbd>
+            </span>
+        </div>
+        <div class="pbt">
+             <span id="Be">
+            <kbd>E</kbd>
+            </span>
+        </div>
+       <div class="pbt">
+             <span id="Bf">
+            <kbd>F</kbd>
+            </span>
+        </div>
+        <div class="pbt">
+            <span id="Bg">
+           <kbd>G</kbd>
+          </span>
+        </div>
+
+     <audio id="AS" src="audio/A_edited.mp3"></audio>
+     <audio id="BS" src="audio/B_edited.mp3"></audio>
+     <audio id="CS" src="audio/C_edited.mp3"></audio>
+      <audio id="DS" src="audio/D_edited.mp3"></audio>
+     <audio id="ES" src="audio/E_edited.mp3"></audio>
+     <audio id="FS" src="audio/F_edited.mp3"></audio>
+       <audio id="GS" src="audio/G_edited.mp3"></audio>
+
+    <script>
+      
+       const FA = document.getElementById("Ba");
+       const FB = document.getElementById("Bb");
+      const FC = document.getElementById("Bc");
+     const FD = document.getElementById("Bd");
+    const FE = document.getElementById("Be");
+    const FF = document.getElementById("Bf");
+     const FG = document.getElementById("Bg");
+
+    const AES = document.getElementById("AS");
+    const BES = document.getElementById("BS");
+    const CES = document.getElementById("CS");
+     const DES = document.getElementById("DS");
+    const EES = document.getElementById("ES");
+     const FES = document.getElementById("FS");
+     const GES = document.getElementById("GS");
+
+    FA.addEventListener("click",function() {
+        AES.play();
+     });
+
+   FB.addEventListener("click",function() {
+        BES.play();
+     });
+   FC.addEventListener("click",function() {
+        CES.play();
+     });
+    FD.addEventListener("click",function() {
+        DES.play();
+     });
+    FE.addEventListener("click",function() {
+        EES.play();
+     });
+    FF.addEventListener("click",function() {
+        FES.play();
+     });
+    FG.addEventListener("click",function() {
+        GES.play();
+     });
+
+    const bxx = document.getElementById("exb");
+   
+    bxx.addEventListener("click", function () {
+        window.close();
+     });
+    
+
+    </script>
+
+    </div>
+
+    </div>
+  </div>
+ 
+  <footer>
+       <p> iae © 2025 </p>
+
+    </footer>
+
+
+    </body>
+</html>
